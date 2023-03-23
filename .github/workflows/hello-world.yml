@@ -5,15 +5,25 @@ on:
     branches: [ main ]
 
 jobs:
-  hello:
-    stage: hello-world
+  hello-world:
     runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run: echo "Hello, world!"
+
+  hello:
+    runs-on: ubuntu-latest
+    needs: hello-world
     steps:
       - name: Run Hello World
         run: echo "Hello, world!"
-  logs:
-    stage: logs
+
+  commit-info:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Logs
-        run: echo "Printing logs..."
+      - name: Print Commit Information
+        env:
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          echo "Commit SHA: $COMMIT_SHA"
+          echo "Commit message: ${{ github.event.head_commit.message }}"

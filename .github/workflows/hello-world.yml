@@ -25,4 +25,4 @@ jobs:
       - name: Short commit
         run : |
           COMMIT_AUTHOR=$(git log -1 --format='%an <%ae>' $COMMIT_SHA)
-          echo 'commit : ' $GITHUB_SHA ',' $COMMIT_AUTHOR 
+          echo 'commit - ' $GITHUB_SHA ',' $COMMIT_AUTHOR 

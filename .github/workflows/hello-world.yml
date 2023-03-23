@@ -27,3 +27,4 @@ jobs:
         run: |
           echo "Commit SHA: $COMMIT_SHA"
           echo "Commit message: ${{ github.event.head_commit.message }}"
+          echo "Created at: ${{ github.event.created_at }}"

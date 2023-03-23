@@ -4,10 +4,6 @@ on:
   push:
     branches: [ main ]
 
-stages:
-  - hello-world
-  - logs
-
 jobs:
   hello:
     stage: hello-world

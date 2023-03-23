@@ -4,15 +4,20 @@ on:
   push:
     branches: [ main ]
 
+stages:
+  - hello-world
+  - logs
+
 jobs:
-
-  stages:
-    - hello-world
-    - logs
-
   hello:
     stage: hello-world
     runs-on: ubuntu-latest
     steps:
       - name: Run Hello World
         run: echo "Hello, world!"
+  logs:
+    stage: logs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Logs
+        run: echo "Printing logs..."

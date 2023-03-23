@@ -19,8 +19,10 @@ jobs:
       - name: Run Hello World
         run: echo "Hello, world!"
 
-  commit:
+  commit_info:
     runs-on: ubuntu-latest
     steps:
       - name: Short commit
-        run : echo $GITHUB_SHA
+        run : |
+          COMMIT_AUTHOR=$(git log -1 --format='%an <%ae>' $COMMIT_SHA)
+          echo 'commit : ' $GITHUB_SHA ',' $COMMIT_AUTHOR 

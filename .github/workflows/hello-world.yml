@@ -11,13 +11,6 @@ jobs:
       - name: Hello World
         run: echo "Hello, world!"
 
-  hello:
-    runs-on: ubuntu-latest
-    needs: hello-world
-    steps:
-      - name: Run Hello World
-        run: echo "Hello, world!"
-
   commit-info:
     runs-on: ubuntu-latest
     steps:
@@ -27,4 +20,4 @@ jobs:
         run: |
           echo "Commit SHA: $COMMIT_SHA"
           echo "Commit message: ${{ github.event.head_commit.message }}"
-          echo "Created at: ${{ github.event.created_at }}"
+          echo "Created at: ${{ github.event.head_commit.created_at }}"

@@ -23,4 +23,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Short commit
-        run : echo $COMMIT_SHORT
+        run : echo $REFERENCE_COURTE_COMMIT

@@ -1,0 +1,21 @@
+name: Hello World
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    stage: hello-world
+    steps:
+      - name: Hello World
+        run: echo "Hello, world!"
+
+  hello:
+    needs: hello-world
+    tags: runner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Hello World
+        run: echo "Hello, world!"

@@ -21,4 +21,4 @@ jobs:
 
   commit:
     - name: Short commit
-    - run : echo ${{ secret.COMMIT_SHORT }}
+    - run : echo $COMMIT_SHORT

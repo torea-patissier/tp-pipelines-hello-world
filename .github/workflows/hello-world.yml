@@ -14,6 +14,12 @@ jobs:
   build-index:
     runs-on: ubuntu-latest
     steps:
+      - name: Clean cache
+        run: npm cache clean -f
+
+      - name: Remove modules
+        run: rm -f node_modules
+
       - name: Build index.ts
         run: npm install
 

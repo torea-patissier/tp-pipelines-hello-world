@@ -1,0 +1,16 @@
+{
+  "name": "tp-hello-world-pipelines",
+  "version": "1.0.0",
+  "description": "- Créer un repository vierge - Y enregistrer votre runner pour qu'il soit en mesure d'exécuter une pipeline de CI/CD, attention, choisissez au moins un tag - Créer un fichier .gitlab-ci.yml contenant: - Une section stages contenant un simple stage hello-world - Une section hello, faisant référence au stage hello-world, et exécutant le script \"echo Hello, world!\", pensez à rajouter une sous section tags pour que votre runner intercepte le job - Lors du commit, la pipeline devrait se lancer et être disponible dans l'onglet \"CI/CD => Pipelines\"",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.0.2"
+  }
+}

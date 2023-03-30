@@ -11,6 +11,15 @@ jobs:
       - name: Hello World
         run: echo "Hello, world!"
 
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build index.ts
+        run: npm install
+
+      - name: Install dependencies
+        run: npm run build
+
   commit-info:
     runs-on: ubuntu-latest
     steps:

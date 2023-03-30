@@ -21,8 +21,9 @@ jobs:
         run: rm -f node_modules
 
       - name: Build index.ts
-        run: npm install
-        working-directory: ./
+        run: |
+          cd /
+          npm install
 
       - name: Install dependencies
         run: npm run build

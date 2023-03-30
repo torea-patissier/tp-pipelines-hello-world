@@ -5,28 +5,21 @@ on:
     branches: [ main ]
 
 jobs:
+
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies & build
+        run: |
+          npm install
+          npm run build
+
   hello-world:
     runs-on: ubuntu-latest
     steps:
       - name: Hello World
         run: echo "Hello, world!"
-
-  build-index:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clean cache
-        run: npm cache clean -f
-
-      - name: Remove modules
-        run: rm -f node_modules
-
-      - name: Build index.ts
-        run: |
-          cd ..
-          npm install
-
-      - name: Install dependencies
-        run: npm run build
 
   commit-info:
     runs-on: ubuntu-latest

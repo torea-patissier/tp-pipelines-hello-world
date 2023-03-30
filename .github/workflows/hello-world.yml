@@ -22,6 +22,7 @@ jobs:
 
       - name: Build index.ts
         run: npm install
+        working_directory: ./
 
       - name: Install dependencies
         run: npm run build

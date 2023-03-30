@@ -22,7 +22,7 @@ jobs:
 
       - name: Build index.ts
         run: |
-          cd /
+          cd ..
           npm install
 
       - name: Install dependencies
